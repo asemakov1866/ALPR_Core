@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config>
+  <Properties>
+    <Database>ALPR</Database>
+    <DBConnectionString>mongodb://localhost:27017</DBConnectionString>
+    <VisitorParkingLimit_hrs>24</VisitorParkingLimit_hrs>
+    <VisitorNotifyTime1_min>10</VisitorNotifyTime1_min>
+    <VisitorNotifyTime2_min></VisitorNotifyTime2_min>
+    <VisitorNotifyTime3_min></VisitorNotifyTime3_min>
+    <Documents_Path>c:\ALPR\Documents</Documents_Path>
+    <Pictures_Path>c:\ALPR\images</Pictures_Path>
+    <Camera_TimerInterval_min>15</Camera_TimerInterval_min>
+    <UnitList>3301,3302,3303,3304,3305,3306,3307,3308,3309,3310,3311,3401,3402,3403,3404,3405,3406,3407,340,3409,3410,3421,3422,3423,3424,3425,3426,3427,3428,3429,3501,3502,3503,3504,3505,3506,3507,3508,3509,3510,3522,3524,3525,3526,3527,3528,3529,3601,3602,3603,3604,3605,3606,3607,3608,3609,3610,3621,3622,3623,3624,3625,3626,3627,3628,3629,3701,3702,3703,3704,3705,3706,3707,3708,3709,3710,3722,3724,3725,3726,3727,3728,3729,3801,3802,3803,3804,3805,3806,3807,3808,3809,3810,3821,3822,3823,3824,3825,3826,3827,3828,3829,3922,3924,3925,3926,3927,3928,3929,4321,4322,4323,4324,4325,4326,4327,4328,4329,4330,4401,4402,4403,4404,4405,4406,4407,4408,4409,4410,4412,4421,4422,4423,4424,4425,4426,4427,4428,4429,4430,4501,4502,4503,4504,4505,4506,4507,4508,4510,4521,4522,4523,4524,4525,4526,4527,4528,4529,4530,4601,4602,4603,4604,4605,4606,4607,4608,4609,4610,4612,4621,4622,4623,4624,4625,4626,4627,4628,4629,4630,4701,4702,4703,4704,4705,4706,4707,4708,4710,4721,4722,4723,4724,4725,4726,4727,4728,4729,4730,4801,4802,4803,4804,4805,4806,4807,4808,4809,4810,4812,4821,4822,4823,4824,4825,4826,4827,4828,4829,4830,4901,4902,4903,49,04,4905,4906,4907,4908,4910</UnitList>
+    <AdministratorPhones>+16508683614, +16509960921, +16505046333</AdministratorPhones>
+  </Properties>
+  <Cameras>
+    <Camera>
+      <Name>GUEST1</Name>
+      <SpotType>VISITOR</SpotType>
+      <Enabled>true</Enabled>
+    </Camera>
+    <Camera>
+      <Name>HOA1</Name>
+      <SpotType>HOA</SpotType>
+      <Enabled>true</Enabled>
+    </Camera>
+    <Camera>
+      <Name>GUEST2</Name>
+      <SpotType>HOA</SpotType>
+      <Enabled>false</Enabled>
+    </Camera>
+    <Camera>
+      <Name>cam4</Name>
+      <SpotType>VISITOR</SpotType>
+      <Enabled>false</Enabled>
+    </Camera>
+    <Camera>
+      <Name>cam5</Name>
+      <SpotType>VISITOR</SpotType>
+      <Enabled>false</Enabled>
+    </Camera>
+    <Camera>
+      <Name>cam4</Name>
+      <SpotType>VISITOR</SpotType>
+      <Enabled>false</Enabled>
+    </Camera>
+    <Camera>
+      <Name>cam7</Name>
+      <SpotType>VISITOR</SpotType>
+      <Enabled>false</Enabled>
+    </Camera>
+    <Camera>
+      <Name>cam8</Name>
+      <SpotType>VISITOR</SpotType>
+      <Enabled>false</Enabled>
+    </Camera>
+  </Cameras>
+  <SMS>
+    <SMS_TimerInterval_sec>1</SMS_TimerInterval_sec>
+    <SMS_login>asemakov</SMS_login>
+    <SMS_key>E060C00E-309C-E7DF-0028-C831783423C8</SMS_key>
+    <SMS_phone>82149</SMS_phone>
+    <Inbound>
+      <SMS_in_Greeting>BHOA</SMS_in_Greeting>
+      <SMS_in_Cancel>Cancel</SMS_in_Cancel>
+      <SMS_in_Bye>Bye</SMS_in_Bye>
+      <SMS_in_Help>Help</SMS_in_Help>
+      <SMS_in_Time>Time</SMS_in_Time>
+      <SMS_in_Update>Update</SMS_in_Update>
+    </Inbound>
+    <Outbound>
+      <SMS_out_Greeting>Welcome to The Belmont HOA! Please text us the License Plate Info and the host's four-digit unit number separated by SPACE. If your license plate has special characters such as a heart, a hand, a star, etc. please omit them.\r\rExample:\r\r5QWE123 3829</SMS_out_Greeting>
+      <SMS_out_Registering>Thank you for registering with The Belmont HOA. Parking for {0} registered {1}, host's Unit# {2} is authorized for {3} hrs. Please verify the registered License Plate number. HOA is not liable for incorrect entries. Incorrect entry of the license plate will make a car subject to tow. Text Cancel in case of error, Help for instructions, Time to check the remaining time.\r\rText Bye when you leave.</SMS_out_Registering>
+      <SMS_out_Bye>Thanks for visiting. Drive safely!</SMS_out_Bye>
+      <SMS_out_InvalidEntry>Invalid entry!\rValid entries:\rGuest\rBye\rLicense Plate and Host's Unit # separated by space\rCancel\rTime\rHelp</SMS_out_InvalidEntry>
+      <SMS_out_UseCase1>This car is not checked in!</SMS_out_UseCase1>
+      <SMS_out_UseCase2>This phone# has already been used to check in a visitor's car!</SMS_out_UseCase2>
+      <SMS_out_UseCase3>Resident's cars are not allowed to park in Green Zone!</SMS_out_UseCase3>
+      <SMS_out_Help>1. Text BHOA to 82149 and wait for the response\r2. Text the License Plate Info and the host's unit number separated by SPACE. If your license plate has special characters such as a heart, a hand, a star, etc. please omit them.\r3. Wait for a confirmaiton message.\r4. Text Bye leaving the parking lot in a car.\r\rCall (650)333-9382 if you have questions.</SMS_out_Help>
+      <SMS_out_Cancel>Your registration was cancelled. Text Guest to start over, text Help for step-by-step instructions.</SMS_out_Cancel>
+    </Outbound>
+  </SMS>
+</Config>
